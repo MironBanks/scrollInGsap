@@ -1,5 +1,5 @@
 <h1 align="center">
-  Priject for fun in React.js and Gsap
+  Project for fun in React.js and Gsap
 </h1>
 
 ## !important STILL IN PROGRESS
