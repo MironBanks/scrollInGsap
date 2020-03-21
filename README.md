@@ -11,3 +11,9 @@
 ## Project Specifications
 
 GSAP animations on scroll without using Scroll Magic!
+
+### "useIntersection" react hook from "react-use"
+
+<h2 align="center">
+  <img src="./src/assets/images/code.png" alt="still in progress" width="50%">
+</h2>

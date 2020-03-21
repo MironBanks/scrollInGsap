@@ -6,6 +6,40 @@ import gsap from "gsap";
 import "./App.scss";
 
 const App = () => {
+  const sectionRef = useRef(null)
+
+
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: '0px',
+    threshold: .5
+  })
+
+  const fadeIn = (element) => {
+    gsap.to(element, 1, {
+      duration: 8,
+      opacity: 1,
+      y: -60,
+      ease: 'power4.out',
+      stagger: {
+        amount: .3
+      }
+    })
+  }
+
+  const fadeOut = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0,
+      y: -20,
+      ease: 'power4.out',
+    })
+  }
+
+  intersection && intersection.intersectionRatio < .5 ?
+    fadeOut(".fadeIn")
+    : fadeIn(".fadeIn")
+
+
   return (
     <>
       <div className='header'>
@@ -35,7 +69,7 @@ const App = () => {
           pretium.
         </p>
       </div>
-      <div className='sectionSecond'>
+      <div ref={sectionRef} className='sectionSecond'>
         <div className='inner'>
           <h3 className='fadeIn'>Pro camera. Pro display. Pro performance.</h3>
           <p className='fadeIn'>
